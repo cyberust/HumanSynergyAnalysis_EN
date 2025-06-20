@@ -37,6 +37,24 @@ The analysis includes the following components:
 
 7.  To view the graphs, you can either open the generated HTML file or run the final cells of the notebook to display them on-demand within Colab.
 
+8. Visualizing the Results
+
+    After the pipeline finishes, no graphs will be displayed automatically in the output. This is by design to prevent browser freezing issues with multiple complex plots.
+
+    All graph objects are generated and stored in the `results` variable. To view any specific graph, **add a new code cell** at the end of the notebook and use one of the following commands:
+
+    *To display the synergy heatmap:*
+    ```python
+    results['figures']['synergy_heatmap'].show()
+    ```
+
+    *To display the dynamic growth trajectory:*
+    ```python
+    results['figures']['growth_trajectory'].show()
+    ```
+
+    You can display any of the generated graphs using their keys: `synergy_heatmap`, `growth_trajectory`, `business_dashboard`, `shapley_values`, `network_graph`.
+
 ## License
 
 This project is released under the MIT License.
